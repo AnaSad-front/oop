@@ -30,3 +30,28 @@ const jay = "Jay";
 console.log(ana instanceof Person);
 console.log(jay instanceof Person);
 */
+
+// PROTOTYPES
+/*
+console.log(Person.prototype);
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+ana.calcAge();
+matilda.calcAge();
+
+console.log(ana.__proto__);
+console.log(ana.__proto__ === Person.prototype);
+
+console.log(Person.prototype.isPrototypeOf(ana)); // true
+console.log(Person.prototype.isPrototypeOf(matilda)); // true
+console.log(Person.prototype.isPrototypeOf(Person)); // false
+
+Person.prototype.species = "Homo sapiens";
+console.log(ana.species, matilda.species);
+
+console.log(ana.hasOwnProperty("firstName")); // true
+console.log(ana.hasOwnProperty("species")); // false
+*/
