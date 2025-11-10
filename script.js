@@ -29,10 +29,9 @@ const jay = "Jay";
 
 console.log(ana instanceof Person);
 console.log(jay instanceof Person);
-*/
 
 // PROTOTYPES
-/*
+
 console.log(Person.prototype);
 
 Person.prototype.calcAge = function () {
@@ -54,4 +53,27 @@ console.log(ana.species, matilda.species);
 
 console.log(ana.hasOwnProperty("firstName")); // true
 console.log(ana.hasOwnProperty("species")); // false
+
+// PROTOTYPAL INHERITANCE
+console.log(ana.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(ana.__proto__.__proto__);
+console.log(ana.__proto__.__proto__.__proto__); // null
+
+console.dir(Person.prototype.constructor);
+
+const arr = [2, 4, 5, 7, 2, 4, 6, 4, 8]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+console.log(arr.unique());
+
+// PROTOTYPAL INHERITANCE ON BUILT-IN OBJECTS
+const h1 = document.querySelector("h1");
+console.dir((x) => x + 1);
 */
