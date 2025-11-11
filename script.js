@@ -1,7 +1,7 @@
 "use strict";
 
 // CONSTRUCTOR FUNCTIONS AND THE NEW OPERATOR
-/*
+
 const Person = function (firstName, birthYear) {
   // Instance properties
   this.firstName = firstName;
@@ -29,6 +29,12 @@ const jay = "Jay";
 
 console.log(ana instanceof Person);
 console.log(jay instanceof Person);
+
+Person.hey = function () {
+  console.log("Hey there 👋");
+  console.log(this);
+};
+Person.hey();
 
 // PROTOTYPES
 
@@ -76,10 +82,9 @@ console.log(arr.unique());
 // PROTOTYPAL INHERITANCE ON BUILT-IN OBJECTS
 const h1 = document.querySelector("h1");
 console.dir((x) => x + 1);
-*/
 
 // ES6 CLASSES
-/*
+
 // class expression
 // const PersonCl =class {}
 
@@ -90,6 +95,7 @@ class PersonCl {
     this.birthYear = birthYear;
   }
 
+  // instance methods
   // methods will be added to .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
@@ -108,6 +114,12 @@ class PersonCl {
 
   get fullName() {
     return this._fullName;
+  }
+
+  // static method
+  static hey() {
+    console.log("Hey there 👋");
+    console.log(this);
   }
 }
 
@@ -128,6 +140,8 @@ jessica.greet();
 const walter = new PersonCl("Walter White", 1965);
 console.log(walter);
 
+PersonCl.hey();
+
 // GETTERS AND SETTERS
 
 const account = {
@@ -146,4 +160,3 @@ const account = {
 console.log(account.latest);
 account.latest = 50;
 console.log(account.movements);
-*/
