@@ -322,13 +322,14 @@ console.log(jay);
 */
 
 // ANOTHER CLASS EXAMPLE
-/*
+
 class Account {
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this.pin = pin;
-    this.movements = [];
+    this._pin = pin;
+    // protected property
+    this._movements = [];
     this.locale = navigator.language;
 
     console.log(`Thanks for opening an account, ${owner}`);
@@ -336,7 +337,7 @@ class Account {
 
   // Public interface
   deposit(val) {
-    this.movements.push(val);
+    this._movements.push(val);
     return this;
   }
 
@@ -354,7 +355,7 @@ class Account {
   }
 
   getMovements() {
-    return this.movements;
+    return this._movements;
   }
 
   _approveLoan(val) {
@@ -370,4 +371,3 @@ acc1.requestLoan(1000);
 console.log(acc1.getMovements());
 
 console.log(acc1);
-*/
