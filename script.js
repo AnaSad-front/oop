@@ -322,7 +322,7 @@ console.log(jay);
 */
 
 // ANOTHER CLASS EXAMPLE
-
+/*
 // 1) Public fields
 // 2) Private fields
 // 3) Public methods
@@ -397,3 +397,4 @@ console.log(acc1);
 // Chaining methods
 acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
 console.log(acc1.getMovements());
+*/
