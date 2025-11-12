@@ -323,21 +323,33 @@ console.log(jay);
 
 // ANOTHER CLASS EXAMPLE
 
+// 1) Public fields
+// 2) Private fields
+// 3) Public methods
+// 4) Private methods
+// (there is also the static version)
+
 class Account {
+  // 1) public fields (instances)
+  locale = navigator.language;
+
+  // 2) private fields
+  #movements = [];
+  #pin;
+
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this._pin = pin;
     // protected property
-    this._movements = [];
-    this.locale = navigator.language;
+    this.#pin = pin;
 
     console.log(`Thanks for opening an account, ${owner}`);
   }
 
+  // 3) public methods
   // Public interface
   deposit(val) {
-    this._movements.push(val);
+    this.#movements.push(val);
     return this;
   }
 
@@ -355,9 +367,15 @@ class Account {
   }
 
   getMovements() {
-    return this._movements;
+    return this.#movements;
   }
 
+  static helper() {
+    console.log("Helper");
+  }
+
+  // 4) private methods
+  // #approveLoan(val) {
   _approveLoan(val) {
     return true;
   }
@@ -371,3 +389,8 @@ acc1.requestLoan(1000);
 console.log(acc1.getMovements());
 
 console.log(acc1);
+// console.log(acc1.#movements);
+// console.log(acc1.#pin);
+// console.log(acc1.#approveLoan(100));
+
+Account.helper();
