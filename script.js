@@ -224,3 +224,67 @@ console.log(mike instanceof Object); // true
 Student.prototype.constructor = Student; // Fixing the constructor pointer
 console.dir(Student.prototype.constructor);
 */
+
+// INHERITANCE BETWEEN "CLASSES": ES6 CLASSES
+/*
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // instance methods
+  // methods will be added to .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  // set a property that already exists
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(" ")) this._fullName = name;
+    else alert(`${name} is not a full name!`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  // static method
+  static hey() {
+    console.log("Hey there 👋");
+    console.log(this);
+  }
+}
+
+class StudentCL extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    // always needs to happen first!
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  }
+
+  calcAge() {
+    console.log(
+      `I'm ${
+        2037 - this.birthYear
+      } years old, but as a student I feel more like ${
+        2037 - this.birthYear + 10
+      }`
+    );
+  }
+}
+
+const martha = new StudentCL("Martha Jones", 2012, "Computer science");
+console.log(martha);
+martha.introduce();
+martha.calcAge();
+*/
